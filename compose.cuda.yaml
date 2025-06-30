@@ -12,7 +12,7 @@ services:
       args:
         BASE_IMAGE: nvidia/cuda:12.9.0-cudnn-runtime-ubuntu24.04
     volumes:
-      - /var/speaches:/home/ubuntu/.cache/huggingface/hub
+      - hf-hub-cache:/home/ubuntu/.cache/huggingface/hub
     deploy:
       resources:
         reservations:
@@ -24,3 +24,5 @@ services:
        LOOPBACK_HOST_URL: http://10.0.0.5:8001
        OPENAI_API_KEY: bjqgm1z67NRAgPuUZWpVp859agP1ia
        OPENAI_BASE_URL: http://10.0.0.5:8001
+volumes:
+  hf-hub-cache:
